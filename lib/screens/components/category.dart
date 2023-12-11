@@ -15,27 +15,38 @@ class Category extends StatefulWidget {
   State<Category> createState() => _CategoryState();
 }
 
-class _CategoryState extends State<Category>
-    with SingleTickerProviderStateMixin {
+class _CategoryState extends State<Category> with TickerProviderStateMixin {
   final ApiController apiController = ApiController();
 
-  late AnimationController _animationController;
+  late AnimationController _scaleAnimationController;
+  late AnimationController _imageColorAnimationController;
 
   @override
   void initState() {
-    _animationController = AnimationController(
+    _scaleAnimationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
       lowerBound: 0.8,
       upperBound: 1,
     );
 
+    _imageColorAnimationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+      lowerBound: 0,
+      upperBound: 1,
+    );
+
     if (widget.isHighligh) {
-      _animationController.repeat(
+      _scaleAnimationController.repeat(
+        reverse: true,
+      );
+      _imageColorAnimationController.repeat(
         reverse: true,
       );
     } else {
-      _animationController.animateTo(1);
+      _scaleAnimationController.animateTo(1);
+      _imageColorAnimationController.animateTo(1);
     }
 
     super.initState();
@@ -76,9 +87,9 @@ class _CategoryState extends State<Category>
                   ]),
               child: ScaleTransition(
                 alignment: Alignment.center,
-                scale: _animationController,
+                scale: _scaleAnimationController,
                 child: AnimatedBuilder(
-                  animation: _animationController,
+                  animation: _imageColorAnimationController,
                   builder: (context, child) {
                     return Center(
                       child: Image.asset(
@@ -88,7 +99,7 @@ class _CategoryState extends State<Category>
                           255,
                           255,
                           255,
-                          (255 * _animationController.value).floor(),
+                          (255 * _imageColorAnimationController.value).floor(),
                         ),
                       ),
                     );
@@ -118,7 +129,8 @@ class _CategoryState extends State<Category>
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _scaleAnimationController.dispose();
+    _imageColorAnimationController.dispose();
     super.dispose();
   }
 }
