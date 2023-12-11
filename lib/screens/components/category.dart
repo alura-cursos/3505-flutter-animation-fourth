@@ -22,8 +22,6 @@ class _CategoryState extends State<Category> {
     return await apiController.getEntriesByCategory(category: widget.category);
   }
 
-  double endValue = 1;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -57,29 +55,12 @@ class _CategoryState extends State<Category> {
                             .withOpacity(0.2),
                         blurStyle: BlurStyle.outer),
                   ]),
-              child: TweenAnimationBuilder<double>(
-                tween: Tween(begin: 0.8, end: endValue),
-                duration: const Duration(seconds: 1),
-                onEnd: () {
-                  if (endValue == 1) {
-                    setState(() {
-                      endValue = 0.8;
-                    });
-                  } else {
-                    setState(() {
-                      endValue = 1;
-                    });
-                  }
-                },
-                builder: (context, value, child) {
-                  return Center(
-                    child: Image.asset(
-                      "$iconPath${widget.category}.png",
-                      height: 78 * ((widget.isHighligh) ? value : 1),
-                      fit: BoxFit.fitHeight,
-                    ),
-                  );
-                },
+              child: Center(
+                child: Image.asset(
+                  "$iconPath${widget.category}.png",
+                  height: 78 * ((widget.isHighligh) ? value : 1),
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
           ),
