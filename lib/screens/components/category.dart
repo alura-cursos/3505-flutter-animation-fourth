@@ -77,17 +77,22 @@ class _CategoryState extends State<Category>
               child: ScaleTransition(
                 alignment: Alignment.center,
                 scale: _animationController,
-                child: Center(
-                  child: Image.asset(
-                    "$iconPath${widget.category}.png",
-                    fit: BoxFit.fitHeight,
-                    color: Color.fromARGB(
-                      255,
-                      255,
-                      255,
-                      (255 * _animationController.value).floor(),
-                    ),
-                  ),
+                child: AnimatedBuilder(
+                  animation: _animationController,
+                  builder: (context, child) {
+                    return Center(
+                      child: Image.asset(
+                        "$iconPath${widget.category}.png",
+                        fit: BoxFit.fitHeight,
+                        color: Color.fromARGB(
+                          255,
+                          255,
+                          255,
+                          (255 * _animationController.value).floor(),
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -96,8 +101,7 @@ class _CategoryState extends State<Category>
         Padding(
           padding: const EdgeInsets.only(top: 10.0),
           child: Text(
-            _animationController.value.toString(),
-            //categories[widget.category]!,
+            categories[widget.category]!,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: Colors.white.withAlpha(200),
                   fontWeight: FontWeight.bold,
