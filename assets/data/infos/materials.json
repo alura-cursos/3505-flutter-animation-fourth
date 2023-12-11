@@ -1,0 +1,67 @@
+{
+    "data": [
+        {
+            "id": 31,
+            "name": "Suprimentos",
+            "image": "comida.webp",
+            "description": "(3PO) Suprimentos alimentícios suficientes para uma semana de aventuras.",
+            "category": "materials",
+            "common_locations": [
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 32,
+            "name": "Flauta",
+            "image": "flauta.webp",
+            "description": "Instrumento musical de sopro com afinação mágica. Pode ser usado como foco arcano para bardos!",
+            "category": "materials",
+            "common_locations": [
+                "Florestas",
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 33,
+            "name": "Orbe da Proteção",
+            "image": "orbe.webp",
+            "description": "Quando quebrado, esse orbe de cor azulada, fornece um domo de proteção que dura oito horas.",
+            "category": "materials",
+            "common_locations": [
+                "Florestas",
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 34,
+            "name": "Algibeira",
+            "image": "algibeira.webp",
+            "description": "Uma pequena bolsa de couro, com uma corda firme que pode ser amarrada na cintura. Útil para carregar moedas.",
+            "category": "materials",
+            "common_locations": [
+                "Cavernas",
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 35,
+            "name": "Doce da Felicidade",
+            "image": "doce.webp",
+            "description": "Uma guloseima que não substitui uma refeição mas pode aumentar a moral dos aventureiros.",
+            "category": "materials",
+            "common_locations": [
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        }
+    ]
+}

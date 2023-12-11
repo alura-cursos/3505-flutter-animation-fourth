@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "id": 11,
+            "name": "Rapieira",
+            "image": "rapier.jpg",
+            "description": "Uma rapieira ordinária. Usa sua Destreza para atacar. Causa 1d8 de dano cortante.",
+            "category": "equipment",
+            "common_locations": [
+                "Todas"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 12,
+            "name": "Martelo de Guerra",
+            "image": "hammer.webp",
+            "description": "Um martelo de guerra ordinário. Usa sua Força para atacar. Causa 1d8 de dano contundente.",
+            "category": "equipment",
+            "common_locations": [
+                "Todas"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 13,
+            "name": "Arco Curto",
+            "image": "bow.jpg",
+            "description": "Um arco curto ordinário, usa sua destreza para atacar e causa 1d6 de dano perfurante.",
+            "category": "equipment",
+            "common_locations": [
+                "Todas"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 14,
+            "name": "Escudo",
+            "image": "shield.jpg",
+            "description": "Um escudo ordinário. Não é usado para atacar, mas aumenta tuas defesas.",
+            "category": "equipment",
+            "common_locations": [
+                "Todas"
+            ],            
+            "dlc": false,
+            "drops": null
+        }
+    ]
+}

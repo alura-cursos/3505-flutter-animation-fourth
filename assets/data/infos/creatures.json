@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "id": 21,
+            "name": "Goblin",
+            "image": "goblin.png",
+            "description": "Goblins são humanóides pequenos e de coração sombrio que vivem em masmorras devastadas e outros ambientes sombrios. Individualmente fracos, eles se reúnem em grande número para atormentar outras criaturas.",
+            "category": "creatures",
+            "common_locations": [
+                "Faerûn"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 22,
+            "name": "Ogro",
+            "image": "ogro.png",
+            "description": "Ogros são gigantes corpulentos famosos por seu temperamento explosivo. Quando sua raiva é incitada, um ogro ataca em um acesso de raiva frustrado até ficar sem objetos ou criaturas para esmagar.",
+            "category": "creatures",
+            "common_locations": [
+                "Faerûn"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 23,
+            "name": "Devorador de Mentes",
+            "image": "mind-flayer.jpg",
+            "description": "Tiranos psiônicos e viajantes interdimensionais, devoradores de mentes são mentores insidiosos que colhem raças inteiras para seus próprios fins distorcidos.",
+            "category": "creatures",
+            "common_locations": [
+                "Todas"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 24,
+            "name": "Drow",
+            "image": "drow.jpeg",
+            "description": "Uma aranha interplanar possui a habilidade mágica de entrar e sair do Plano Etéreo. Ela parece surgir de lugar nenhum e, rapidamente desaparece após atacar. Ela se movimenta no Plano Etéreo antes de voltar para o Plano Material, fazendo parecer que ela pode se teletransportar. ",
+            "category": "creatures",
+            "common_locations": [
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 25,
+            "name": "Urso-Coruja",
+            "image": "urso-coruja.png",
+            "description": "Uma mistura monstruosa entre uma coruja gigante e um urso, a reputação de ferocidade e agressão do urso-coruja o torna um dos predadores mais temidos da natureza.",
+            "category": "creatures",
+            "common_locations": [
+                "Florestas"
+            ],            
+            "dlc": false,
+            "drops": null
+        }
+    ]
+}

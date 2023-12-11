@@ -1,0 +1,68 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Flunf",
+            "image": "flunf.png",
+            "description": "Os misteriosos flunfs flutuam pelo Subterrâneo impulsionados pelo ar por jatos cujo o som deram o nome. Um flumph brilha levemente, refletindo seu humor pela sua cor. Rosa claro significa feliz, azul escuro é tristeza, verde expressa curiosidade e carmesim é raiva.",
+            "category": "monsters",
+            "common_locations": [
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 2,
+            "name": "Banshee",
+            "image": "banshee.png",
+            "description": "As banshees parecem esquálidas formas luminosas que lembram vagamente suas características mortais. O rosto de uma banshee está envolto em um emaranhado de cabelos, o corpo vestido com trapos esfarrapados que vibram à medida que ela se move.",
+            "category": "monsters",
+            "common_locations": [
+                "Florestas",
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 3,
+            "name": "Inço-Pragas",
+            "image": "infectado.png",
+            "description": "Plantas despertas dotadas de poderes de inteligência e mobilidade, os infectados empesteiam as terras contaminadas pelas trevas. Alimentando-se das trevas do solo, um infectado carrega a vontade de um mal ancestral e tenta espalhar esse mal por onde quer que vá.",
+            "category": "monsters",
+            "common_locations": [
+                "Florestas",
+                "Subterrâneo",
+                "Maldisombra"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 4,
+            "name": "Aranha Interplanar",
+            "image": "aranha-interplanar.png",
+            "description": "Uma aranha interplanar possui a habilidade mágica de entrar e sair do Plano Etéreo. Ela parece surgir de lugar nenhum e, rapidamente desaparece após atacar. Ela se movimenta no Plano Etéreo antes de voltar para o Plano Material, fazendo parecer que ela pode se teletransportar. ",
+            "category": "monsters",
+            "common_locations": [
+                "Cavernas",
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        },
+        {
+            "id": 5,
+            "name": "Miconídeos",
+            "image": "miconideo.png",
+            "description": "Os miconídeos são fungos ambulantes inteligentes que vivem no Subterrâneo, buscando esclarecimento, e repudiando violência. Se forem abordados pacificamente, os miconides oferecerão abrigo com prazer ou permitirão passagem segura através de suas colônias.",
+            "category": "monsters",
+            "common_locations": [
+                "Subterrâneo"
+            ],            
+            "dlc": false,
+            "drops": null
+        }
+    ]
+}

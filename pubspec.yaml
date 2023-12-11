@@ -1,0 +1,53 @@
+name: faerun
+description: Projeto Faerun para curso Flutter com Animaçoes Explicitas
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  floor: ^1.4.2
+  sqflite: ^2.3.0
+  animations: ^2.0.8
+  flutter_native_splash: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  floor_generator: ^1.4.2
+  build_runner: ^2.4.6
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/data/infos/
+    - assets/data/images/
+    
+  fonts:
+    - family: Philosopher
+      fonts:
+        - asset: assets/fonts/Philosopher-Regular.ttf
+        - asset: assets/fonts/Philosopher-Bold.ttf
+        - asset: assets/fonts/Philosopher-BoldItalic.ttf
+        - asset: assets/fonts/Philosopher-Italic.ttf
+          style: italic
+
+flutter_native_splash:
+  color: "#261c1e"
+  image: assets/logo.png
+  android_12:
+    color: "#261c1e"
+    icon_background_color: "#261c1e"
+    image: assets/logo_1152.png
