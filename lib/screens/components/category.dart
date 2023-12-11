@@ -26,7 +26,18 @@ class _CategoryState extends State<Category>
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
+      lowerBound: 0.8,
+      upperBound: 1,
     );
+
+    if (widget.isHighligh) {
+      _animationController.repeat(
+        reverse: true,
+      );
+    } else {
+      _animationController.animateTo(1);
+    }
+
     super.initState();
   }
 
