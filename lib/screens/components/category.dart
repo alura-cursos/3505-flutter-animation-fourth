@@ -46,7 +46,7 @@ class _CategoryState extends State<Category> with TickerProviderStateMixin {
       );
     } else {
       _scaleAnimationController.animateTo(1);
-      _imageColorAnimationController.animateTo(1);
+      _imageColorAnimationController.animateTo(0);
     }
 
     super.initState();
@@ -99,7 +99,10 @@ class _CategoryState extends State<Category> with TickerProviderStateMixin {
                           255,
                           255,
                           255,
-                          (255 * _imageColorAnimationController.value).floor(),
+                          (255 *
+                                  (_imageColorAnimationController.value - 1)
+                                      .abs())
+                              .floor(),
                         ),
                       ),
                     );
