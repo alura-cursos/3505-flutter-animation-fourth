@@ -15,7 +15,8 @@ class Category extends StatefulWidget {
   State<Category> createState() => _CategoryState();
 }
 
-class _CategoryState extends State<Category> {
+class _CategoryState extends State<Category>
+    with SingleTickerProviderStateMixin {
   final ApiController apiController = ApiController();
 
   late AnimationController _animationController;
@@ -23,7 +24,7 @@ class _CategoryState extends State<Category> {
   @override
   void initState() {
     _animationController = AnimationController(
-      vsync: vsync,
+      vsync: this,
       duration: const Duration(seconds: 1),
     );
     super.initState();
