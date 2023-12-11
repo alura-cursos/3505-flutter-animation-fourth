@@ -18,8 +18,15 @@ class Category extends StatefulWidget {
 class _CategoryState extends State<Category> {
   final ApiController apiController = ApiController();
 
-  Future<List<Entry>> getEntries() async {
-    return await apiController.getEntriesByCategory(category: widget.category);
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: vsync,
+      duration: const Duration(seconds: 1),
+    );
+    super.initState();
   }
 
   @override
@@ -55,11 +62,14 @@ class _CategoryState extends State<Category> {
                             .withOpacity(0.2),
                         blurStyle: BlurStyle.outer),
                   ]),
-              child: Center(
-                child: Image.asset(
-                  "$iconPath${widget.category}.png",
-                  height: 78 * ((widget.isHighligh) ? value : 1),
-                  fit: BoxFit.fitHeight,
+              child: ScaleTransition(
+                alignment: Alignment.center,
+                scale: _animationController,
+                child: Center(
+                  child: Image.asset(
+                    "$iconPath${widget.category}.png",
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ),
             ),
@@ -77,5 +87,9 @@ class _CategoryState extends State<Category> {
         ),
       ],
     );
+  }
+
+  Future<List<Entry>> getEntries() async {
+    return await apiController.getEntriesByCategory(category: widget.category);
   }
 }
