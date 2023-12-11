@@ -6,8 +6,10 @@ import 'package:faerun/utils/consts/categories.dart';
 import '../../domain/models/entry.dart';
 
 class Category extends StatelessWidget {
-  Category({Key? key, required this.category}) : super(key: key);
+  Category({Key? key, required this.category, this.isHighligh = false})
+      : super(key: key);
   final String category;
+  final bool isHighligh;
 
   final ApiController apiController = ApiController();
 
@@ -48,8 +50,18 @@ class Category extends StatelessWidget {
                             .withOpacity(0.2),
                         blurStyle: BlurStyle.outer),
                   ]),
-              child: Center(
-                child: Image.asset("$iconPath$category.png"),
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(begin: 0.8, end: 1),
+                duration: const Duration(seconds: 1),
+                builder: (context, value, child) {
+                  return Center(
+                    child: Image.asset(
+                      "$iconPath$category.png",
+                      height: 78 * value,
+                      fit: BoxFit.fitHeight,
+                    ),
+                  );
+                },
               ),
             ),
           ),

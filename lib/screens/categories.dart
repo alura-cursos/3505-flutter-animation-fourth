@@ -70,8 +70,12 @@ class Categories extends StatelessWidget {
               mainAxisSpacing: 16,
               mainAxisExtent: 193,
             ),
-            children:
-                categories.keys.map((e) => Category(category: e)).toList(),
+            children: categories.keys
+                .map((e) => Category(
+                      category: e,
+                      isHighligh: e == "monsters",
+                    ))
+                .toList(),
           ),
         ),
       ),
