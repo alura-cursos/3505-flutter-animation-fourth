@@ -104,4 +104,10 @@ class _CategoryState extends State<Category>
   Future<List<Entry>> getEntries() async {
     return await apiController.getEntriesByCategory(category: widget.category);
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 }
