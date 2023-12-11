@@ -5,17 +5,24 @@ import 'package:faerun/utils/consts/categories.dart';
 
 import '../../domain/models/entry.dart';
 
-class Category extends StatelessWidget {
-  Category({Key? key, required this.category, this.isHighligh = false})
+class Category extends StatefulWidget {
+  const Category({Key? key, required this.category, this.isHighligh = false})
       : super(key: key);
   final String category;
   final bool isHighligh;
 
+  @override
+  State<Category> createState() => _CategoryState();
+}
+
+class _CategoryState extends State<Category> {
   final ApiController apiController = ApiController();
 
   Future<List<Entry>> getEntries() async {
-    return await apiController.getEntriesByCategory(category: category);
+    return await apiController.getEntriesByCategory(category: widget.category);
   }
+
+  double endValue = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +36,7 @@ class Category extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        Results(entries: value, category: category),
+                        Results(entries: value, category: widget.category),
                   ),
                 ),
               );
@@ -51,13 +58,24 @@ class Category extends StatelessWidget {
                         blurStyle: BlurStyle.outer),
                   ]),
               child: TweenAnimationBuilder<double>(
-                tween: Tween(begin: 0.8, end: 1),
+                tween: Tween(begin: 0.8, end: endValue),
                 duration: const Duration(seconds: 1),
+                onEnd: () {
+                  if (endValue == 1) {
+                    setState(() {
+                      endValue = 0.8;
+                    });
+                  } else {
+                    setState(() {
+                      endValue = 1;
+                    });
+                  }
+                },
                 builder: (context, value, child) {
                   return Center(
                     child: Image.asset(
-                      "$iconPath$category.png",
-                      height: 78 * value,
+                      "$iconPath${widget.category}.png",
+                      height: 78 * ((widget.isHighligh) ? value : 1),
                       fit: BoxFit.fitHeight,
                     ),
                   );
@@ -69,7 +87,7 @@ class Category extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 10.0),
           child: Text(
-            categories[category]!,
+            categories[widget.category]!,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: Colors.white.withAlpha(200),
                   fontWeight: FontWeight.bold,
