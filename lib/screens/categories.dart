@@ -73,7 +73,7 @@ class Categories extends StatelessWidget {
             children: categories.keys
                 .map((e) => Category(
                       category: e,
-                      isHighligh: e == "monsters",
+                      isHighlight: e == "monsters",
                     ))
                 .toList(),
           ),

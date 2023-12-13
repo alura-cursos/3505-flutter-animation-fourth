@@ -1,3 +1,4 @@
+import 'package:faerun/screens/components/category_transition.dart';
 import 'package:flutter/material.dart';
 import 'package:faerun/controllers/api_controller.dart';
 import 'package:faerun/screens/results.dart';
@@ -6,10 +7,10 @@ import 'package:faerun/utils/consts/categories.dart';
 import '../../domain/models/entry.dart';
 
 class Category extends StatefulWidget {
-  const Category({Key? key, required this.category, this.isHighligh = false})
+  const Category({Key? key, required this.category, this.isHighlight = false})
       : super(key: key);
   final String category;
-  final bool isHighligh;
+  final bool isHighlight;
 
   @override
   State<Category> createState() => _CategoryState();
@@ -51,7 +52,11 @@ class _CategoryState extends State<Category> {
                             .withOpacity(0.2),
                         blurStyle: BlurStyle.outer),
                   ]),
-              child: 
+              child: CategoryTransitionWidget(
+                isHighlight: widget.isHighlight,
+                duration: const Duration(seconds: 1),
+                imagePath: "$iconPath${widget.category}.png",
+              ),
             ),
           ),
         ),

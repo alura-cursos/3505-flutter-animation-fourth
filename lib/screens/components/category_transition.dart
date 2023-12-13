@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class CategoryTransitionWidget extends StatefulWidget {
   final bool isHighlight;
   final Duration duration;
+  final String imagePath;
   const CategoryTransitionWidget({
     super.key,
     required this.isHighlight,
     required this.duration,
+    required this.imagePath,
   });
 
   @override
@@ -52,7 +54,11 @@ class _CategoryTransitionWidgetState extends State<CategoryTransitionWidget>
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CategoryTranstion(
+      imageColorAnimationController: _imageColorAnimationController,
+      scaleAnimationController: _scaleAnimationController,
+      imagePath: widget.imagePath,
+    );
   }
 
   @override
@@ -64,9 +70,16 @@ class _CategoryTransitionWidgetState extends State<CategoryTransitionWidget>
 }
 
 class CategoryTranstion extends AnimatedWidget {
-  const CategoryTranstion(
-      {super.key, required Animation<double> imageColorAnimationController})
-      : super(
+  final Animation<double> scaleAnimationController;
+  final Animation<double> imageColorAnimationController;
+  final String imagePath;
+
+  const CategoryTranstion({
+    super.key,
+    required this.imageColorAnimationController,
+    required this.scaleAnimationController,
+    required this.imagePath,
+  }) : super(
           listenable: imageColorAnimationController,
         );
 
@@ -74,24 +87,19 @@ class CategoryTranstion extends AnimatedWidget {
   Widget build(BuildContext context) {
     return ScaleTransition(
       alignment: Alignment.center,
-      scale: _scaleAnimationController,
-      child: AnimatedBuilder(
-        animation: _imageColorAnimationController,
-        builder: (context, child) {
-          return Center(
-            child: Image.asset(
-              "$iconPath${widget.category}.png",
-              fit: BoxFit.fitHeight,
-              color: Color.fromARGB(
-                255,
-                255,
-                255,
-                (255 * (_imageColorAnimationController.value - 1).abs())
-                    .floor(),
-              ),
-            ),
-          );
-        },
+      scale: scaleAnimationController,
+      child: Center(
+        child: Image.asset(
+          imagePath,
+          //"$iconPath${widget.category}.png",
+          fit: BoxFit.fitHeight,
+          color: Color.fromARGB(
+            255,
+            255,
+            255,
+            (255 * (imageColorAnimationController.value - 1).abs()).floor(),
+          ),
+        ),
       ),
     );
   }
