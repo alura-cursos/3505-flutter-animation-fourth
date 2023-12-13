@@ -15,42 +15,8 @@ class Category extends StatefulWidget {
   State<Category> createState() => _CategoryState();
 }
 
-class _CategoryState extends State<Category> with TickerProviderStateMixin {
+class _CategoryState extends State<Category> {
   final ApiController apiController = ApiController();
-
-  late AnimationController _scaleAnimationController;
-  late AnimationController _imageColorAnimationController;
-
-  @override
-  void initState() {
-    _scaleAnimationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-      lowerBound: 0.8,
-      upperBound: 1,
-    );
-
-    _imageColorAnimationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-      lowerBound: 0,
-      upperBound: 1,
-    );
-
-    if (widget.isHighligh) {
-      _scaleAnimationController.repeat(
-        reverse: true,
-      );
-      _imageColorAnimationController.repeat(
-        reverse: true,
-      );
-    } else {
-      _scaleAnimationController.animateTo(1);
-      _imageColorAnimationController.animateTo(0);
-    }
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -128,12 +94,5 @@ class _CategoryState extends State<Category> with TickerProviderStateMixin {
 
   Future<List<Entry>> getEntries() async {
     return await apiController.getEntriesByCategory(category: widget.category);
-  }
-
-  @override
-  void dispose() {
-    _scaleAnimationController.dispose();
-    _imageColorAnimationController.dispose();
-    super.dispose();
   }
 }
