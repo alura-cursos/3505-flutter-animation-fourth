@@ -62,3 +62,37 @@ class _CategoryTransitionWidgetState extends State<CategoryTransitionWidget>
     super.dispose();
   }
 }
+
+class CategoryTranstion extends AnimatedWidget {
+  const CategoryTranstion(
+      {super.key, required Animation<double> imageColorAnimationController})
+      : super(
+          listenable: imageColorAnimationController,
+        );
+
+  @override
+  Widget build(BuildContext context) {
+    return ScaleTransition(
+      alignment: Alignment.center,
+      scale: _scaleAnimationController,
+      child: AnimatedBuilder(
+        animation: _imageColorAnimationController,
+        builder: (context, child) {
+          return Center(
+            child: Image.asset(
+              "$iconPath${widget.category}.png",
+              fit: BoxFit.fitHeight,
+              color: Color.fromARGB(
+                255,
+                255,
+                255,
+                (255 * (_imageColorAnimationController.value - 1).abs())
+                    .floor(),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}

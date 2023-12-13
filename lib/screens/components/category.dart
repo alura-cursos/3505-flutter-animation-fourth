@@ -51,30 +51,7 @@ class _CategoryState extends State<Category> {
                             .withOpacity(0.2),
                         blurStyle: BlurStyle.outer),
                   ]),
-              child: ScaleTransition(
-                alignment: Alignment.center,
-                scale: _scaleAnimationController,
-                child: AnimatedBuilder(
-                  animation: _imageColorAnimationController,
-                  builder: (context, child) {
-                    return Center(
-                      child: Image.asset(
-                        "$iconPath${widget.category}.png",
-                        fit: BoxFit.fitHeight,
-                        color: Color.fromARGB(
-                          255,
-                          255,
-                          255,
-                          (255 *
-                                  (_imageColorAnimationController.value - 1)
-                                      .abs())
-                              .floor(),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
+              child: 
             ),
           ),
         ),
