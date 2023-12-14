@@ -1,8 +1,8 @@
 ![Mobile-Flutter: Conhecendo a biblioteca Animations](capa.png)
 
-# Flutter: Animações Explicitas
+# Flutter: Animações Explícitas
 
-Projeto Faerûn para o curso Flutter: Animações Explícitas, focado em compreender e implementar animações Explicitas em seu projeto.
+Projeto Faerûn para o curso Flutter: Animações Explícitas, focado em compreender e implementar animações explícitas em seu projeto.
 
 Esse projeto é baseado no [Hyrule](https://github.com/alura-cursos/3504-flutter-animations) do curso Flutter: Conhecendo a biblioteca Animations;
 
@@ -12,10 +12,10 @@ Esse projeto é baseado no [Hyrule](https://github.com/alura-cursos/3504-flutter
 - RotationTransition;
 - Atributos e conceitos em comum nos FooTransitions;
 - Como controlar uma animação explícita;
-- Criando uma animação explicita personalizada;
+- Criando uma animação explícita personalizada;
 - Quando e como usar o AnimatedWidget;
 
-Este curso é indicado para pessoas que já tem conhecimento básico e querem aprofundar seu conhecimento em Flutter, seguindo boas práticas e também entendendendo como implementar Animações Explicitas dentro de seu projeto.
+Este curso é indicado para pessoas que já tem conhecimento básico e querem aprofundar seu conhecimento em Flutter, seguindo boas práticas e também entendendendo como implementar Animações Explícitas dentro de seu projeto.
 
 ## 📑 Requisitos
 
